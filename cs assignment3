@@ -1,0 +1,465 @@
+1. #include<stdio.h> 
+
+#include<math.h> 
+
+int main() 
+
+{ 
+
+    int i , x, e; 
+
+    long pow=1; 
+
+    printf("enter the number and exponemt="); 
+
+    scanf("%d %d",&x,&e); 
+
+    for(i=1;i<=e;i++) 
+
+    { 
+
+        pow=pow*x; 
+
+    } 
+
+    printf("%dpower%d=%d",x,e,pow); 
+
+    return 0; 
+
+} 
+
+2. #include<stdio.h> 
+
+int main() 
+
+{ 
+
+    int x, i; 
+
+    printf("enter the value"); 
+
+    scanf("%d",&x); 
+
+    for(i=1;i<=x;i++) 
+
+    { 
+
+        if(x%i==0){ 
+
+        printf(" %d ",i); 
+
+        } 
+
+    } 
+
+    return 0; 
+
+} 
+
+3. #include<stdio.h> 
+
+int main() 
+
+{ 
+
+    int n1, n2, i, gcd; 
+
+    printf("enter the value of two number ="); 
+
+    scanf("%d %d",&n1, &n2); 
+
+    for(i=1;i<=n1 && i<=n2;++i) 
+
+    { 
+
+        if(n1%i==0 && n2%i==0) 
+
+        gcd=i; 
+
+    } 
+
+    printf("%d and %d\n gcd= %d", n1,n2,gcd); 
+
+    return 0; 
+
+} 
+
+4. #include<stdio.h> 
+
+int main() 
+
+{ 
+
+    int n1 , n2, i, gcd, lcm ; 
+
+    printf("enter the value of two number"); 
+
+    scanf("%d %d",&n1, &n2); 
+
+    for(i=1;i<=n1 &&i<=n2;i++) 
+
+    if(n1%i==0 && n2%i==0) 
+
+    { 
+
+        gcd=i; 
+
+    } 
+
+    lcm=n1*n2/gcd; 
+
+    printf("%d", lcm); 
+
+    return 0;     
+
+} 
+
+5. #include<stdio.h> 
+
+#include<math.h> 
+
+int main() 
+
+{ 
+
+    int  i,j, num, isprime; 
+
+    printf("enter any number "); 
+
+    scanf("%d",&num); 
+
+    printf("print the all prime factors of %d are ", num); 
+
+    for(i=2; i<=num; i++) 
+
+    { 
+
+        if(num%i==0) 
+
+        { 
+
+            isprime=1;  
+
+            for(j=2;j<=i/2;j++) 
+
+            { 
+
+                if(i%j==0) 
+
+                { 
+
+                    isprime=0; 
+
+                    break; 
+
+                } 
+
+            } 
+
+            if(isprime==1){ 
+
+            printf("%d",i); 
+
+            } 
+
+        } 
+
+    } 
+
+    return 0; 
+
+} 
+
+6. #include <stdio.h> 
+
+ 
+
+int main() 
+
+{ 
+
+    int i, orglNum, num, lDigit, sum=0; 
+
+    long fact=1; 
+
+ 
+
+    printf("Enter any number to check Strong number: "); 
+
+    scanf("%d", &num); 
+
+    orglNum = num; 
+
+ 
+
+    while(num > 0) 
+
+    { 
+
+        lDigit = num % 10; 
+
+        for(i=1; i<=lDigit; i++) 
+
+        { 
+
+            fact *= i; 
+
+        } 
+
+        sum += fact; 
+
+ 
+
+        num /= 10; 
+
+    } 
+
+    if(sum == orglNum) 
+
+        printf("%d is STRONG NUMBER", orglNum); 
+
+    else 
+
+        printf("%d is NOT STRONG NUMBER", orglNum); 
+
+    return 0; 
+
+} 
+
+7. #include <stdio.h> 
+
+ 
+
+int main() 
+
+{ 
+
+    int i, j, cur, lDigit, s, e; 
+
+    long long fact, sum; 
+
+    printf("Enter lower limit: "); 
+
+    scanf("%d", &s); 
+
+    printf("Enter upper limit: "); 
+
+    scanf("%d", &e); 
+
+ 
+
+    printf("All Strong numbers between %d to %d are:\n", s, e); 
+
+    for(i=s; i<=e; i++) 
+
+    { 
+
+        cur = i; 
+
+        sum = 0; 
+
+        while(cur > 0) 
+
+        { 
+
+            fact = 1ll; 
+
+            lDigit = cur % 10; 
+
+            for( j=1; j<=lDigit; j++) 
+
+            { 
+
+                fact = fact * j; 
+
+            } 
+
+ 
+
+            sum += fact;  
+
+ 
+
+            cur /= 10; 
+
+        } 
+
+        if(sum == i) 
+
+        { 
+
+            printf("%d, ", i); 
+
+        } 
+
+    } 
+
+    return 0;} 
+
+8. #include<stdio.h> 
+
+#include<conio.h> 
+
+int main() 
+
+{ 
+
+    int decnum, rem, i=0; 
+
+    char hexnum[50]; 
+
+    printf("Enter any decimal number: "); 
+
+    scanf("%d", &decnum); 
+
+    while(decnum!=0) 
+
+    { 
+
+        rem = decnum%16; 
+
+        if(rem<10) 
+
+            rem = rem+48; 
+
+        else 
+
+            rem = rem+55; 
+
+        hexnum[i] = rem; 
+
+        i++; 
+
+        decnum = decnum/16; 
+
+    } 
+
+    printf("\nEquivalent Value in Hexadecimal = "); 
+
+    for(i=i-1; i>=0; i--) 
+
+        printf("%c", hexnum[i]); 
+
+    getch(); 
+
+    return 0; 
+
+} 
+
+ 
+
+9. #include<stdio.h> 
+
+int main() 
+
+{ 
+
+    char a[7]={"monday" , "tuesday" , "wednesday" , "thursday" , "friday" , "saturday" , "sunday" }, x; 
+
+    printf("enter the week day"); 
+
+    scanf("%d",&x); 
+
+    if(x>7 || x<1) 
+
+    { 
+
+        printf("invalid"); 
+
+    } 
+
+    else 
+
+    { 
+
+        printf("%d",a[x-1]); 
+
+    } 
+
+    return 0; 
+
+} 
+
+10. #include <stdio.h>  
+
+int main() 
+
+{ 
+
+    int phy, chem, bio, math, comp;  
+
+    float per; 
+
+     
+
+    printf("Enter five subjects marks: "); 
+
+    scanf("%d%d%d%d%d", &phy, &chem, &bio, &math, &comp); 
+
+     
+
+    per = (phy + chem + bio + math + comp) / 5.0; 
+
+     
+
+    printf("Percentage = %f\n", per);  
+
+    if(per >= 90) 
+
+    { 
+
+        printf("Grade A");  
+
+         
+
+    }  
+
+    else if(per >= 80)  
+
+    { 
+
+        printf("Grade B"); 
+
+    }  
+
+    else if(per >= 70)  
+
+    { 
+
+        printf("Grade C");  
+
+         
+
+    } 
+
+    else if(per >= 60)  
+
+    { 
+
+        printf("Grade D");  
+
+    }  
+
+    else if(per >= 40) 
+
+    { 
+
+        printf("Grade E");  
+
+         
+
+    }  
+
+    else  
+
+    { 
+
+        printf("Grade F");  
+
+         
+
+    } return 0;  
+
+     
+
+} 
